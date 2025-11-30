@@ -40,8 +40,8 @@ const Footer = () => {
           <Box>
             <Typography sx={{ fontFamily: 'Bebas Neue, Arial, sans-serif', fontSize: 16, fontWeight: 400, mb: 1 }}>NEWSLETTER</Typography>
             <Typography sx={{ fontFamily: 'Inter, Arial, sans-serif', fontSize: 16, fontWeight: 500, color: '#99A1AF', mb: 2 }}>Stay updated with<br />Rangers news</Typography>
-            <TextField placeholder="Your email" type="email" sx={{ width: 200.15, mb: 1.5, '& .MuiOutlinedInput-root': { height: 40, bgcolor: 'rgba(255, 255, 255, 0.1)', fontFamily: 'Inter, Arial, sans-serif', fontSize: 16, fontWeight: 500, color: '#6A7282', '&:hover fieldset': { border: '0.8px solid #FFFFFF' }, '&.Mui-focused fieldset': { border: '0.8px solid #FFFFFF' } }, '& input': { color: '#FFFFFF' } }} />
-            <Button sx={{ width: 200.15, height: 40, bgcolor: '#E74C3C', color: '#FFFFFF', fontFamily: 'Bebas Neue, Arial, sans-serif', fontSize: 16, fontWeight: 400, textTransform: 'none', '&:hover': { bgcolor: '#d43f2f' } }}>SUBSCRIBE</Button>
+            <TextField placeholder="Your email" type="email" sx={{ width: 200.15, mb: 1.5, '& .MuiOutlinedInput-root': { height: 40, bgcolor: 'rgba(255,255,255,0.1)', '& fieldset, &:hover fieldset, &.Mui-focused fieldset': { border: 'none' } }, '& input': { color: '#fff', fontFamily: 'Inter, Arial', fontSize: 16, fontWeight: 500 } }} />
+            <Button sx={{ width: 200.15, height: 40, bgcolor: '#E74C3C', color: '#FFFFFF', fontFamily: 'Bebas Neue, Arial, sans-serif', fontSize: 16, fontWeight: 400, textTransform: 'none', justifyContent: 'flex-start', '&:hover': { bgcolor: '#d43f2f' } }}>SUBSCRIBE</Button>
           </Box>
         </Box>
       </Container>

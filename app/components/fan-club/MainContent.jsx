@@ -33,11 +33,15 @@ const MainContent = () => {
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: 'repeat(2, 1fr)' }, gap: 3, maxWidth: 1200, mx: 'auto', px: 2, mb: { xs: 6, md: 8 } }}>
         {players.map((p, i) => (
           <Box key={i} sx={{ bgcolor: '#FFFFFF', width: { xs: '100%', lg: 568.4 }, height: { xs: 'auto', lg: 280 }, boxShadow: '0px 4px 6px -4px rgba(0, 0, 0, 0.1)', borderRadius: '10px', p: 3, display: 'flex', gap: 2 }}>
-            <Box sx={{ bgcolor: '#E5E7EB', width: { xs: 60, md: 80 }, height: { xs: 60, md: 80 }, borderRadius: '50%', flexShrink: 0 }} />
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography sx={{ fontFamily: 'Bebas Neue, Arial, sans-serif', fontSize: { xs: 20, md: 24 }, color: '#1A1A1A' }}>{p.name}</Typography>
-              <Typography sx={{ fontFamily: 'Inter, Arial, sans-serif', fontSize: { xs: 14, md: 16 }, color: '#4A5565', mb: 0.5 }}>{p.position}</Typography>
-              <Typography sx={{ fontFamily: 'Inter, Arial, sans-serif', fontSize: { xs: 12, md: 14 }, color: '#6A7282', mb: 2 }}>{p.stats}</Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Box>
+                  <Typography sx={{ fontFamily: 'Bebas Neue, Arial, sans-serif', fontSize: { xs: 20, md: 24 }, color: '#1A1A1A' }}>{p.name}</Typography>
+                  <Typography sx={{ fontFamily: 'Inter, Arial, sans-serif', fontSize: { xs: 14, md: 16 }, color: '#4A5565', mb: 0.5 }}>{p.position}</Typography>
+                  <Typography sx={{ fontFamily: 'Inter, Arial, sans-serif', fontSize: { xs: 12, md: 14 }, color: '#6A7282', mb: 2 }}>{p.stats}</Typography>
+                </Box>
+                <Box sx={{ bgcolor: '#E5E7EB', width: { xs: 60, md: 80 }, height: { xs: 60, md: 80 }, borderRadius: '50%', flexShrink: 0 }} />
+              </Box>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                 <Typography sx={{ fontFamily: 'Inter, Arial, sans-serif', fontSize: { xs: 12, md: 14 }, color: '#4A5565', mb: 1 }}>Current Votes</Typography>
                 <Typography sx={{ fontFamily: 'Bebas Neue, Arial, sans-serif', fontSize: { xs: 12, md: 14 }, color: '#1A1A1A' }}>{p.votes.toLocaleString()} ({p.percentage}%)</Typography>
