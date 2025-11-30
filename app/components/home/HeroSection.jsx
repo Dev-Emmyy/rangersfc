@@ -21,6 +21,7 @@ export default function HeroSection() {
         backgroundImage: 'url(/hero-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        overflow: 'hidden',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -38,6 +39,11 @@ export default function HeroSection() {
             color: '#FFFFFF',
             mb: 2,
             lineHeight: 1,
+            animation: 'slideDown 1s ease-out',
+            '@keyframes slideDown': {
+              '0%': { opacity: 0, transform: 'translateY(-50px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            }
           }}>
             NEVER SAY DIE
           </Typography>
@@ -48,11 +54,27 @@ export default function HeroSection() {
             color: '#FFFFFF',
             mb: 5,
             px: { xs: 2, md: 0 },
+            animation: 'fadeIn 1s ease-out 0.3s backwards',
+            '@keyframes fadeIn': {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 }
+            }
           }}>
             Where Legends Are Born and Champions Are Made
           </Typography>
 
-          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center', px: { xs: 2, md: 0 } }}>
+          <Box sx={{ 
+            display: 'flex', 
+            gap: 2, 
+            flexWrap: 'wrap', 
+            justifyContent: 'center', 
+            px: { xs: 2, md: 0 },
+            animation: 'slideUp 1s ease-out 0.5s backwards',
+            '@keyframes slideUp': {
+              '0%': { opacity: 0, transform: 'translateY(30px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            }
+          }}>
             <Button startIcon={<ConfirmationNumberOutlinedIcon />} sx={{
               backgroundColor: '#E74C3C',
               color: '#FFFFFF',
@@ -61,7 +83,12 @@ export default function HeroSection() {
               borderRadius: '10px',
               fontFamily: 'var(--font-bebas-neue)',
               fontSize: { xs: '14px', md: '16px' },
-              '&:hover': { backgroundColor: '#d43f2f' },
+              transition: 'all 0.3s ease',
+              '&:hover': { 
+                backgroundColor: '#d43f2f',
+                transform: 'translateY(-5px)',
+                boxShadow: '0 10px 25px rgba(231, 76, 60, 0.4)'
+              },
             }}>
               BUY TICKETS
             </Button>
@@ -74,7 +101,12 @@ export default function HeroSection() {
               borderRadius: '10px',
               fontFamily: 'var(--font-bebas-neue)',
               fontSize: { xs: '14px', md: '16px' },
-              '&:hover': { backgroundColor: '#f0f0f0' },
+              transition: 'all 0.3s ease',
+              '&:hover': { 
+                backgroundColor: '#f0f0f0',
+                transform: 'translateY(-5px)',
+                boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)'
+              },
             }}>
               JOIN ACADEMY
             </Button>
@@ -88,7 +120,12 @@ export default function HeroSection() {
               border: '2px solid #FFFFFF',
               fontFamily: 'var(--font-bebas-neue)',
               fontSize: { xs: '14px', md: '16px' },
-              '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' },
+              transition: 'all 0.3s ease',
+              '&:hover': { 
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                transform: 'translateY(-5px)',
+                boxShadow: '0 10px 25px rgba(255, 255, 255, 0.3)'
+              },
             }}>
               SHOP MERCHANDISE
             </Button>
@@ -125,7 +162,17 @@ export default function HeroSection() {
         <Grid container spacing={{ xs: 6, md: 15 }} justifyContent="center">
           {stats.map((stat, index) => (
             <Grid item xs={6} sm={6} md={3} key={index}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mx: 'auto' }}>
+              <Box sx={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                mx: 'auto',
+                animation: `fadeInScale 0.8s ease-out ${0.2 + index * 0.1}s backwards`,
+                '@keyframes fadeInScale': {
+                  '0%': { opacity: 0, transform: 'scale(0.8)' },
+                  '100%': { opacity: 1, transform: 'scale(1)' }
+                }
+              }}>
                 <Box sx={{
                   width: { xs: '64px', md: '80px' },
                   height: { xs: '64px', md: '80px' },
@@ -136,6 +183,11 @@ export default function HeroSection() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   mb: { xs: 2, md: 3 },
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-8px) rotate(5deg)',
+                    boxShadow: '0px 15px 35px rgba(231, 76, 60, 0.25)'
+                  }
                 }}>
                   {stat.icon}
                 </Box>
