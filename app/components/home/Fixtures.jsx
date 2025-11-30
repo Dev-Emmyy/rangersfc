@@ -48,24 +48,24 @@ export default function FixturesSection() {
   }, []);
 
   return (
-    <Box sx={{ py: 8, backgroundColor: '#E74C3C' }}>
-      <Container maxWidth="xl">
+    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#E74C3C' }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 2, md: 3 } }}>
         <Typography sx={{
           fontFamily: 'var(--font-bebas-neue)',
-          fontSize: '48px',
+          fontSize: { xs: '32px', sm: '40px', md: '48px' },
           color: '#1A1A1A',
-          mb: 6,
+          mb: { xs: 4, md: 6 },
         }}>
           NEXT FIXTURES
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 3, md: 4 }}>
           <Grid item xs={12} md={6}>
             <Box sx={{
               backgroundColor: 'rgba(0, 0, 0, 0.1)',
               borderRadius: '12px',
-              p: 4,
-              width : 603,
+              p: { xs: 3, md: 4 },
+              width: { xs: 340, md: 603 },
               height: '100%',
               display: 'flex',
               flexDirection: 'column',
@@ -75,7 +75,7 @@ export default function FixturesSection() {
               <Box>
                 <Typography sx={{
                   fontFamily: 'var(--font-inter)',
-                  fontSize: '14px',
+                  fontSize: { xs: '13px', md: '14px' },
                   color: '#FFFFFF',
                   mb: 3,
                   display: 'flex',
@@ -88,7 +88,7 @@ export default function FixturesSection() {
 
                 <Typography sx={{
                   fontFamily: 'var(--font-bebas-neue)',
-                  fontSize: { xs: '48px', md: '72px' },
+                  fontSize: { xs: '36px', sm: '48px', md: '72px' },
                   color: '#FFFFFF',
                   lineHeight: 1.1,
                   mb: 3,
@@ -99,11 +99,11 @@ export default function FixturesSection() {
                 <Button sx={{
                   backgroundColor: '#FFFFFF',
                   color: '#02270E',
-                  width: '154px',
-                  height: '43px',
+                  width: { xs: '130px', md: '154px' },
+                  height: { xs: '38px', md: '43px' },
                   borderRadius: '8px',
                   fontFamily: 'var(--font-bebas-neue)',
-                  fontSize: '14px',
+                  fontSize: { xs: '13px', md: '14px' },
                   '&:hover': { backgroundColor: '#f0f0f0' },
                 }}>
                   BUY TICKET
@@ -116,8 +116,8 @@ export default function FixturesSection() {
             <Box sx={{
               backgroundColor: 'rgba(0, 0, 0, 0.1)',
               borderRadius: '12px',
-              p: 4,
-              width : 570,
+              p: { xs: 3, md: 4 },
+              width: { xs: 340, md: 550 },
               height: '100%',
               display: 'flex',
               alignItems: 'center',
@@ -135,7 +135,7 @@ export default function FixturesSection() {
                 pointerEvents: 'none',
               },
             }}>
-              <Grid container spacing={3} justifyContent="center">
+              <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center">
                 {[
                   { value: countdown.days, label: 'Days' },
                   { value: countdown.hours, label: 'Hours' },
@@ -146,7 +146,7 @@ export default function FixturesSection() {
                     <Box sx={{ textAlign: 'center' }}>
                       <Typography sx={{
                         fontFamily: 'var(--font-bebas-neue)',
-                        fontSize: '78px',
+                        fontSize: { xs: '40px', sm: '56px', md: '78px' },
                         color: '#FFFFFF',
                         lineHeight: 1,
                       }}>
@@ -154,7 +154,7 @@ export default function FixturesSection() {
                       </Typography>
                       <Typography sx={{
                         fontFamily: 'Open Sans, sans-serif',
-                        fontSize: '14px',
+                        fontSize: { xs: '12px', md: '14px' },
                         color: '#FFFFFF',
                         mt: 1,
                       }}>
@@ -168,20 +168,20 @@ export default function FixturesSection() {
           </Grid>
         </Grid>
 
-        <Grid container spacing={4} sx={{ mt: 4 }}>
+        <Grid container spacing={{ xs: 3, md: 4 }} sx={{ mt: { xs: 2, md: 4 } }}>
           {fixtures.map((fixture, index) => (
             <Grid item xs={12} md={6} key={index}>
               <Box sx={{
                 backgroundColor: '#FFFFFF',
                 borderRadius: '12px',
-                p: 4,
-                width: 580,
-                height: 340,
+                p: { xs: 3, md: 4 },
+                width: { xs: 340, md: 580 },
+                height: { xs: 'auto', md: 340 },
                 mx: 'auto',
               }}>
                 <Typography sx={{
                   fontFamily: 'var(--font-inter)',
-                  fontSize: '14px',
+                  fontSize: { xs: '13px', md: '14px' },
                   color: '#6A7282',
                   mb: 3,
                 }}>
@@ -192,22 +192,22 @@ export default function FixturesSection() {
                   <Box sx={{ textAlign: 'center' }}>
                     <Typography sx={{
                       fontFamily: 'var(--font-bebas-neue)',
-                      fontSize: '24px',
+                      fontSize: { xs: '18px', sm: '20px', md: '24px' },
                       color: '#1A1A1A',
                       mb: 2,
                     }}>
                       {fixture.homeTeam}
                     </Typography>
-                    <Box sx={{ position: 'relative', width: 64, height: 64, mx: 'auto' }}>
+                    <Box sx={{ position: 'relative', width: { xs: 48, md: 64 }, height: { xs: 48, md: 64 }, mx: 'auto' }}>
                       <Image src={fixture.homeLogo} alt={fixture.homeTeam} fill style={{ objectFit: 'contain' }} />
                     </Box>
                   </Box>
 
                   <Typography sx={{
                     fontFamily: 'var(--font-bebas-neue)',
-                    fontSize: '24px',
+                    fontSize: { xs: '18px', sm: '20px', md: '24px' },
                     color: '#1A1A1A',
-                    mx: 3,
+                    mx: { xs: 2, md: 3 },
                   }}>
                     VS
                   </Typography>
@@ -215,40 +215,40 @@ export default function FixturesSection() {
                   <Box sx={{ textAlign: 'center' }}>
                     <Typography sx={{
                       fontFamily: 'var(--font-bebas-neue)',
-                      fontSize: '24px',
+                      fontSize: { xs: '18px', sm: '20px', md: '24px' },
                       color: '#1A1A1A',
                       mb: 2,
                     }}>
                       {fixture.awayTeam}
                     </Typography>
-                    <Box sx={{ position: 'relative', width: 64, height: 64, mx: 'auto' }}>
+                    <Box sx={{ position: 'relative', width: { xs: 48, md: 64 }, height: { xs: 48, md: 64 }, mx: 'auto' }}>
                       <Image src={fixture.awayLogo} alt={fixture.awayTeam} fill style={{ objectFit: 'contain' }} />
                     </Box>
                   </Box>
                 </Box>
 
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
+                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'space-between', mb: 3, gap: { xs: 1, sm: 0 } }}>
                   <Typography sx={{
                     fontFamily: 'var(--font-inter)',
-                    fontSize: '14px',
+                    fontSize: { xs: '13px', md: '14px' },
                     color: '#1A1A1A',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1,
                   }}>
-                    <CalendarTodayIcon sx={{ fontSize: 16, color : "#E74C3C"}} />
+                    <CalendarTodayIcon sx={{ fontSize: 16, color: "#E74C3C" }} />
                     {fixture.date} • {fixture.time}
                   </Typography>
 
                   <Typography sx={{
                     fontFamily: 'var(--font-inter)',
-                    fontSize: '14px',
+                    fontSize: { xs: '13px', md: '14px' },
                     color: '#1A1A1A',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1,
                   }}>
-                    <LocationOnIcon sx={{ fontSize: 16, color : "#E74C3C" }} />
+                    <LocationOnIcon sx={{ fontSize: 16, color: "#E74C3C" }} />
                     {fixture.venue}
                   </Typography>
                 </Box>
@@ -256,10 +256,10 @@ export default function FixturesSection() {
                 <Button fullWidth sx={{
                   backgroundColor: '#E74C3C',
                   color: '#FFFFFF',
-                  height: '48px',
+                  height: { xs: '44px', md: '48px' },
                   borderRadius: '10px',
                   fontFamily: 'var(--font-bebas-neue)',
-                  fontSize: '16px',
+                  fontSize: { xs: '14px', md: '16px' },
                   '&:hover': { backgroundColor: '#d43f2f' },
                 }}>
                   BUY TICKETS

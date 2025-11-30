@@ -25,13 +25,14 @@ export default function NewsSection() {
   ];
 
   return (
-    <Box sx={{ py: 8, backgroundColor: '#F9FAFB' }}>
-      <Container maxWidth="xl">
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#F9FAFB' }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 2, md: 3 } }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: { xs: 4, md: 6 }, flexDirection: { xs: 'column', sm: 'row' }, gap: { xs: 2, sm: 0 } }}>
           <Typography sx={{
             fontFamily: 'var(--font-bebas-neue)',
-            fontSize: '48px',
+            fontSize: { xs: '32px', sm: '40px', md: '48px' },
             color: '#1A1A1A',
+            textAlign: { xs: 'center', sm: 'left' },
           }}>
             LATEST FROM THE CAMP
           </Typography>
@@ -39,7 +40,7 @@ export default function NewsSection() {
           <Link href="/news" style={{ textDecoration: 'none' }}>
             <Typography sx={{
               fontFamily: 'var(--font-bebas-neue)',
-              fontSize: '16px',
+              fontSize: { xs: '14px', md: '16px' },
               color: '#E74C3C',
               cursor: 'pointer',
               '&:hover': { textDecoration: 'underline' },
@@ -49,13 +50,13 @@ export default function NewsSection() {
           </Link>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 3, md: 4 }}>
           {news.map((item, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <Box sx={{
                 width: '100%',
-                maxWidth: '365.6px',
-                height: '478px',
+                maxWidth: { xs: '100%', md: '365.6px' },
+                height: { xs: 'auto', md: '478px' },
                 backgroundColor: '#FFFFFF',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
@@ -65,7 +66,7 @@ export default function NewsSection() {
                 transition: 'transform 0.3s ease',
                 '&:hover': { transform: 'translateY(-8px)' },
               }}>
-                <Box sx={{ position: 'relative', width: '100%', height: '256px' }}>
+                <Box sx={{ position: 'relative', width: '100%', height: { xs: '200px', sm: '220px', md: '256px' } }}>
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -74,21 +75,21 @@ export default function NewsSection() {
                   />
                 </Box>
 
-                <Box sx={{ p: 3 }}>
+                <Box sx={{ p: { xs: 2.5, md: 3 } }}>
                   <Typography sx={{
                     fontFamily: 'var(--font-inter)',
-                    fontSize: '14px',
+                    fontSize: { xs: '13px', md: '14px' },
                     color: '#6A7282',
-                    mb: 2,
+                    mb: { xs: 1.5, md: 2 },
                   }}>
                     {item.date}
                   </Typography>
 
                   <Typography sx={{
                     fontFamily: 'var(--font-bebas-neue)',
-                    fontSize: '20px',
+                    fontSize: { xs: '18px', md: '20px' },
                     color: '#1A1A1A',
-                    mb: 2,
+                    mb: { xs: 1.5, md: 2 },
                     lineHeight: 1.3,
                   }}>
                     {item.title}
@@ -96,7 +97,7 @@ export default function NewsSection() {
 
                   <Typography sx={{
                     fontFamily: 'var(--font-inter)',
-                    fontSize: '16px',
+                    fontSize: { xs: '15px', md: '16px' },
                     color: '#4A5565',
                     lineHeight: 1.6,
                   }}>
